@@ -226,7 +226,7 @@ export default {
     next() {
       this.$refs.calendar.next();
     },
-    async addEvent () {
+    async addEvent() {
       if (this.name && this.start && this.end) {
         await db.collection("calEvent").add({
           name: this.name,
@@ -234,15 +234,15 @@ export default {
           start: this.start,
           end: this.end,
           color: this.color
-        })
-        this.getEvents()
-        this.name = '',
-        this.details = '',
-        this.start = '',
-        this.end = '',
-        this.color = "#1976D2"
+        });
+        this.getEvents();
+        (this.name = ""),
+          (this.details = ""),
+          (this.start = ""),
+          (this.end = ""),
+          (this.color = "#1976D2");
       } else {
-        alert('You must enter event name, start, and end time')
+        alert("You must enter event name, start, and end time");
       }
     },
     editEvent(ev) {
